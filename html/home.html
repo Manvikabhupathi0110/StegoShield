@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEGOSHIELD | Advanced Security</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #020617; }
+        .glow-mesh {
+            background-image: 
+                radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.15) 0, transparent 50%), 
+                radial-gradient(at 100% 100%, rgba(20, 184, 166, 0.1) 0, transparent 50%);
+        }
+        
+        /* Fixed Leaf Tabs: Sharp and Vibrant on Hover */
+        .bento-card {
+    background: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(4px); 
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    opacity: 0.7;
+    filter: grayscale(0.5);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    cursor: pointer;
+}
+
+/* Hover Logic: Removing Grayscale for all cards */
+.bento-card:hover {
+    opacity: 1;
+    filter: grayscale(0) contrast(1.1);
+    transform: translateY(-5px);
+}
+
+/* --- UNIQUE HOVER COLORS --- */
+
+/* Card 1: Blue (Cryptography) */
+#card-crypto:hover {
+    border-color: rgba(59, 130, 246, 0.6);
+    background: rgba(15, 23, 42, 0.95);
+    box-shadow: 0 15px 30px -10px rgba(59, 130, 246, 0.5);
+}
+
+/* Card 2: Purple (Universal Logic) */
+#card-universal:hover {
+    border-color: rgba(168, 85, 247, 0.6);
+    background: rgba(15, 23, 42, 0.95);
+    box-shadow: 0 15px 30px -10px rgba(168, 85, 247, 0.5);
+}
+
+/* Card 3: Green (Privacy/Latency) */
+#card-privacy:hover {
+    border-color: rgba(34, 197, 94, 0.6);
+    background: rgba(15, 23, 42, 0.95);
+    box-shadow: 0 15px 30px -10px rgba(34, 197, 94, 0.5);
+}
+
+/* Card 4: Teal (Majority Voting) */
+#card-voting:hover {
+    border-color: rgba(20, 184, 166, 0.6);
+    background: rgba(15, 23, 42, 0.95);
+    box-shadow: 0 15px 30px -10px rgba(20, 184, 166, 0.5);
+}
+
+.text-gradient {
+    background: linear-gradient(to right, #60a5fa, #2dd4bf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+    </style>
+</head>
+<body class="text-slate-300 antialiased selection:bg-blue-500/30">
+
+    <div class="fixed inset-0 glow-mesh -z-10"></div>
+
+    <nav class="max-w-7xl mx-auto flex items-center justify-center px-6 py-10">
+        <div class="text-3xl font-extrabold tracking-tighter text-white flex items-center gap-3">
+            <div class="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-900/40">🛡️</div>
+            STEGO<span class="text-blue-500">SHIELD</span>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 pt-16 pb-24 text-center">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/10 border border-blue-500/20 text-blue-400 text-xs font-bold uppercase tracking-widest mb-8">
+            Antahpragnya 2k26 Special Edition
+        </div>
+        
+        <h1 class="text-5xl md:text-7xl font-extrabold text-white leading-tight tracking-tight mb-8">
+    Hide Anything, <br>
+    <span class="text-gradient">Anywhere.</span>
+</h1>
+
+        <div class="w-full max-w-4xl mx-auto mb-12 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
+            
+        </div>
+        
+        <div class="flex flex-col items-center gap-6">
+    
+
+    <div class="flex flex-row items-center justify-center gap-6 w-full max-w-2xl">
+    <a href="index.html" class="flex-1 px-6 py-4 rounded-2xl font-bold text-lg border-2 border-blue-500/50 text-blue-400 hover:bg-blue-600 hover:text-white transition-all shadow-lg shadow-blue-900/20 text-center">
+        Launch WorkSpace
+    </a>
+
+    <button onclick="toggleModal('docModal')" class="flex-1 px-6 py-4 rounded-2xl font-bold text-lg border-2 border-teal-500/50 text-teal-400 hover:bg-teal-500 hover:text-white transition-all shadow-lg shadow-teal-900/20">
+        How It Works
+    </button>
+</div>
+</div>
+    </main>
+
+    <section class="max-w-7xl mx-auto px-6 pb-32">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <div id="card-crypto" class="md:col-span-2 bento-card rounded-[2.5rem] p-10 flex flex-col md:flex-row gap-8 items-center">
+            <div class="flex-1">
+                <h3 class="text-3xl font-bold text-white mb-4">Hybrid Cryptography</h3>
+                <p class="text-slate-400 text-lg leading-relaxed">
+                    StegoShield leverages the Web Crypto API to implement <strong>AES-GCM 256-bit encryption</strong>. Before embedding, data is mathematically hardened using <strong>PBKDF2</strong> key derivation to prevent brute-force attacks.
+                </p>
+            </div>
+            <div class="w-full md:w-64 aspect-square bg-blue-500/10 rounded-3xl border border-blue-500/20 flex items-center justify-center text-6xl">🔐</div>
+        </div>
+        
+        <div id="card-universal" class="bento-card rounded-[2.5rem] p-10 flex flex-col justify-center text-center">
+            <h3 class="text-2xl font-bold text-white mb-4">Structural Vault</h3>
+            <p class="text-slate-400 leading-relaxed">
+                Appends encrypted payloads after the carrier's <strong>EOF markers</strong>. This makes data invisible to standard PDF readers and document editors.
+            </p>
+        </div>
+
+        <div id="card-privacy" class="bento-card rounded-[2.5rem] p-10 flex flex-col justify-center text-center">
+            <h3 class="text-2xl font-bold text-white mb-4">Zero-Latency Privacy</h3>
+            <p class="text-slate-400 leading-relaxed">
+                All processing occurs locally in <strong>RAM</strong> using Typed Arrays. Your files never touch a server, ensuring absolute data sovereignty.
+            </p>
+        </div>
+
+        <div id="card-voting" class="md:col-span-2 bento-card rounded-[2.5rem] p-10 flex flex-col md:flex-row gap-8 items-center">
+            <div class="w-full md:w-64 aspect-square bg-teal-500/10 rounded-3xl border border-teal-500/20 flex items-center justify-center text-6xl">🎬</div>
+            <div class="flex-1">
+                <h3 class="text-3xl font-bold text-white mb-4">Compression-Resistant Video</h3>
+                <p class="text-slate-400 text-lg leading-relaxed">
+                    Unlike fragile pixel-based methods, our <strong>Binary Shadowing</strong> technique attaches data to the video stream's architecture. This ensures 100% data recovery even after aggressive codec compression.
+                </p>
+            </div>
+        </div>
+        
+    </div>
+</section>
+    <div id="docModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-6 bg-black/95 backdrop-blur-md">
+    <div class="bg-slate-900 border border-slate-800 max-w-4xl w-full rounded-[2.5rem] p-10 md:p-14 relative overflow-y-auto max-h-[90vh]">
+        <button onclick="toggleModal('docModal')" class="absolute top-8 right-8 text-slate-500 hover:text-white text-3xl">✕</button>
+        
+        <h2 class="text-4xl font-black text-white mb-12 text-gradient text-center">How StegoShield Works</h2>
+        
+        <div class="max-w-3xl mx-auto space-y-12 text-left">
+    
+    <div class="border-l-4 border-blue-500 pl-6">
+        <h4 class="text-blue-400 font-bold mb-4 uppercase text-sm tracking-widest">Step 1: Cryptographic Fortification</h4>
+        <p class="text-base text-slate-400 leading-relaxed mb-4">
+            Before any data is hidden, it undergoes a rigorous encryption process. StegoShield utilizes <strong>AES-GCM 256-bit</strong>, an authenticated encryption standard that provides both confidentiality and data integrity. To protect against brute-force attacks, your password is processed through the <strong>PBKDF2</strong> algorithm with 100,000 iterations and a unique salt, transforming it into a high-entropy master key.
+        </p>
+    </div>
+
+    <div class="border-l-4 border-teal-500 pl-6">
+        <h4 class="text-teal-400 font-bold mb-6 uppercase text-sm tracking-widest">Step 2: Advanced Media Embedding</h4>
+        
+        <div class="space-y-8">
+            <div>
+                <h5 class="text-white font-bold mb-2 flex items-center gap-2">🖼️ Image Steganography</h5>
+                <p class="text-slate-400 leading-relaxed">
+                    Utilizing <strong>Least Significant Bit (LSB) Substitution</strong>, we hide data within the color channels of a PNG image. Each pixel consists of Red, Green, and Blue (RGB) values. By modifying only the lowest bit of these 8-bit values, we can store binary data without altering the visual appearance of the pixel. The mathematical change is so minute (1 part in 256) that the human eye cannot detect the alteration even under high magnification.
+                </p>
+            </div>
+
+            <div>
+                <h5 class="text-white font-bold mb-2 flex items-center gap-2">🎵 Audio Steganography</h5>
+                <p class="text-slate-400 leading-relaxed">
+                    For 16-bit WAV files, we implement <strong>PCM Amplitude Modulation</strong>. We convert sound waves into a series of numerical samples. By hiding the secret bits within the LSB of these samples, we are essentially hiding your data in the "whispers" of the audio stream. Since the modification affects only 1 out of 65,536 possible amplitude levels per sample, the resulting noise is physically below the threshold of human hearing.
+                </p>
+            </div>
+
+            <div>
+                <h5 class="text-white font-bold mb-2 flex items-center gap-2">🎬 Video Steganography</h5>
+                <p class="text-slate-400 leading-relaxed">
+                    Video files are highly sensitive to pixel manipulation due to aggressive lossy compression (VP8/H.264). To combat this, StegoShield uses <strong>Structural Binary Appending</strong>. Instead of hiding bits in the frames where they would be "smudged" out, we inject the encrypted payload immediately following the video's End-of-File (EOF) marker. Standard media players ignore any data following this marker, but our extractor scans the binary architecture to retrieve it with 100% bit-accuracy.
+                </p>
+            </div>
+
+            <div>
+                <h5 class="text-white font-bold mb-2 flex items-center gap-2">📄 Documents(.pdf, .html, .docx)</h5>
+                <p class="text-slate-400 leading-relaxed">
+                    This module treats complex document structures as generic <strong>Binary Stream Containers</strong>. Document readers like Adobe Acrobat or Microsoft Word look for specific structural tags to start and stop rendering. We utilize <strong>EOF Cloaking</strong> to stitch your encrypted secret, a unique Stego Marker, and the original filename metadata to the end of the document's binary stream. This allows the document to remain fully functional and editable while secretly carrying a separate, hidden file system within its architecture.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="border-l-4 border-blue-500 pl-6">
+        <h4 class="text-blue-400 font-bold mb-4 uppercase text-sm tracking-widest">Step 3: Secure Reconstruction</h4>
+        <p class="text-base text-slate-400 leading-relaxed">
+            During extraction, the system scans the carrier’s binary map for a high-entropy <strong>Stego Marker</strong>. Once found, it isolates the encrypted blob, parses the metadata header to recover the original filename/extension, and initiates the AES-GCM decryption sequence. If the password is correct and the data hasn't been tampered with, the original file is reconstructed in RAM and offered for download.
+        </p>
+    </div>
+
+</div>
+    </div>
+</div>
+
+    <div id="learnMoreModal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-6 bg-black/95 backdrop-blur-md">
+        <div class="bg-slate-900 border border-slate-800 max-w-3xl w-full rounded-[2.5rem] p-10 md:p-14 relative overflow-y-auto max-h-[90vh]">
+            <button onclick="toggleModal('learnMoreModal')" class="absolute top-8 right-8 text-slate-500 hover:text-white text-3xl">✕</button>
+            <h2 class="text-4xl font-black text-white mb-8">Core Concepts</h2>
+            <div class="space-y-8 text-slate-300 leading-relaxed">
+                <p><strong>Cryptography</strong> ensures your message cannot be read. <strong>Steganography</strong> ensures your message cannot be found.</p>
+                <p>By combining both, StegoShield provides a two-layer defense that protects not only the content of your communication but the metadata of the transmission itself.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleModal(id) {
+            const modal = document.getElementById(id);
+            modal.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

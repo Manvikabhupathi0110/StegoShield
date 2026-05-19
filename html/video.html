@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Embed in Video | StegoShield</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../css/global.css" rel="stylesheet">
+</head>
+<body class="bg-advanced min-h-screen text-white p-6">
+    <div class="max-w-6xl mx-auto">
+    	<button onclick="window.location.href='index.html'" class="btn-back mb-8 group">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    <span>Back to Workspace</span>
+</button>
+        <h1 class="text-4xl font-bold text-center mb-8 text-blue-400">Embed Secret in Video</h1>
+
+        <div class="flex flex-col md:flex-row gap-6 mb-8">
+            <div class="flex-1 glass-panel p-6 rounded-3xl flex flex-col">
+                <h2 class="text-xl font-bold mb-4 text-blue-400">1. Cover Video</h2>
+                <div class="w-full h-64 bg-gray-900/50 rounded-2xl flex items-center justify-center border-2 border-dashed border-blue-500/30 overflow-hidden mb-4">
+                    <video id="coverPreview" class="hidden h-full w-full object-contain" controls></video>
+                    <p id="coverPlaceholder" class="text-gray-500 px-4 text-center">Upload the container video (MP4/WebM)</p>
+                </div>
+                <input type="file" id="coverInput" accept="video/*" class="hidden" onchange="previewFile('cover')">
+                <button onclick="document.getElementById('coverInput').click()" class="mt-auto w-full py-3 bg-blue-600/20 border border-blue-500/50 rounded-xl font-bold hover:bg-blue-600 transition">Select Video</button>
+            </div>
+
+            <div class="flex-1 glass-panel p-6 rounded-3xl flex flex-col">
+                <h2 class="text-xl font-bold mb-4 text-teal-400">2. Secret File</h2>
+                <div class="w-full h-64 bg-gray-900/50 rounded-2xl flex items-center justify-center border-2 border-dashed border-teal-500/30 overflow-hidden mb-4 text-center">
+                    <div id="secretPlaceholder">
+                        <p class="text-gray-500 px-4">Upload any file to hide</p>
+                        <p id="secretName" class="text-teal-400 text-sm mt-2 font-mono"></p>
+                    </div>
+                </div>
+                <input type="file" id="secretInput" class="hidden" onchange="previewFile('secret')">
+                <button onclick="document.getElementById('secretInput').click()" class="mt-auto w-full py-3 bg-teal-600/20 border border-teal-500/50 rounded-xl font-bold hover:bg-teal-700 transition">Select Secret</button>
+            </div>
+        </div>
+
+        <div class="max-w-2xl mx-auto glass-panel p-8 rounded-3xl">
+            <div class="mb-6">
+                <label class="block text-blue-300 text-sm font-bold mb-3">3. Set Security Password</label>
+                <input type="password" id="stegoPass" 
+                       class="w-full bg-gray-800 border border-white/10 p-4 rounded-xl text-white focus:outline-none focus:border-blue-500 shadow-inner" 
+                       placeholder="Enter password to lock data">
+            </div>
+            <button id="embedBtn" onclick="processEmbedding()" class="w-full py-4 bg-gradient-to-r from-blue-600 to-teal-500 rounded-xl font-extrabold text-lg shadow-lg hover:scale-[1.02] active:scale-95 transition-all">
+                PROCEED AND EMBED
+            </button>
+            <p id="status" class="mt-4 text-center text-sm font-medium"></p>
+        </div>
+    </div>
+
+    <script src="../js/videoLogic.js"></script>
+</body>
+</html>

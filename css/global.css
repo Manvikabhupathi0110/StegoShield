@@ -1,0 +1,117 @@
+/* STEGOSHIELD MASTER STYLES - Antahpragnya 2k26 Edition */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
+/* 1. Core Background & Branding */
+/* Restoring Font Size & Hierarchy */
+html {
+    font-size: 16px; /* Sets the standard base size */
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Ensure headings are bold and large */
+h2 {
+    font-size: 1.65rem !important; /* Equivalent to text-3xl */
+    font-weight: 700 !important;
+    letter-spacing: -0.025em;
+}
+
+p {
+    font-size: 1.125rem !important; /* Equivalent to text-lg */
+    color: #94a3b8; /* Slate-400 */
+}
+
+/* Fix for the Status Message */
+#statusMessage {
+    font-size: 1.25rem !important;
+    font-weight: 700;
+}
+
+.bg-advanced {
+    background: radial-gradient(circle at 10% 20%, rgb(17, 24, 39) 0%, rgb(30, 41, 59) 100%);
+}
+
+/* 2. Glassmorphism Panels */
+.glass-panel {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* 3. The Attractive Back Button (Used in all sub-modules) */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    color: #94a3b8;
+    font-size: 0.875rem;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.btn-back:hover {
+    background: rgba(59, 130, 246, 0.1);
+    border-color: rgba(59, 130, 246, 0.4);
+    color: #60a5fa;
+    transform: translateX(-4px);/* Moves left to indicate "going back" */
+    box-shadow: -10px 0 20px -10px rgba(59, 130, 246, 0.3); 
+}
+
+/* 4. Mode Selection Buttons (Index.html specific) */
+.btn-gradient-outline {
+    background-image: linear-gradient(rgba(17, 24, 39, 0), rgba(17, 24, 39, 0)), linear-gradient(90deg, #60a5fa, #4ade80);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+    border: 2px solid transparent;
+    color: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.btn-gradient-fill {
+    background: linear-gradient(90deg, #60a5fa, #4ade80) !important;
+    color: #ffffff !important;
+    border: 2px solid transparent !important;
+    box-shadow: 0 0 15px rgba(96, 165, 250, 0.5);
+}
+
+/* 5. Refined Status Message (Replaces long Tailwind strings) */
+.status-gold {
+    margin-top: 1.5rem; /* mt-6 */
+    text-align: center; /* text-center */
+    font-size: 1.25rem !important; /* text-xl */
+    font-weight: 700; /* font-bold */
+    background: linear-gradient(to right, #fca5a5, #34d399); /* from-red-300 to-emerald-500 */
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 0 10px rgba(52, 211, 153, 0.3)); /* drop-shadow with emerald glow */
+}
+
+/* 6. Shared Tab/Card Logic */
+.active-tab {
+    border-bottom: 2px solid #60a5fa;
+    color: #ffffff;
+    font-weight: 600;
+}
+
+/* Animation for unlocking the workspace */
+.scale-100 {
+    transform: scale(1);
+    opacity: 1 !important;
+}
+
+.btn-back svg {
+    transition: transform 0.3s ease;
+}
+
+.btn-back:hover svg {
+    transform: translateX(-3px);
+}

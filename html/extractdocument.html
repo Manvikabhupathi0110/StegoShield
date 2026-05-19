@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Extract from Document | StegoShield</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="../css/global.css" rel="stylesheet">
+</head>
+<body class="bg-advanced min-h-screen text-white p-6">
+    <div class="max-w-6xl mx-auto">
+        <button onclick="window.location.href='index.html'" class="btn-back mb-8 group">
+    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="19" y1="12" x2="5" y2="12"></line>
+        <polyline points="12 19 5 12 12 5"></polyline>
+    </svg>
+    <span>Back to Workspace</span>
+</button>
+        
+        <h1 class="text-4xl font-bold text-center mb-8 text-teal-400">Extract from Document</h1>
+
+        <div class="flex flex-col md:flex-row gap-6 mb-8">
+            
+            <div class="flex-1 glass-panel p-6 rounded-3xl flex flex-col border-2 border-dashed border-blue-500/30">
+                <h2 class="text-xl font-bold mb-4 text-blue-400">1. Upload Cloaked Document</h2>
+                <div class="w-full h-64 bg-gray-900/50 rounded-2xl flex items-center justify-center overflow-hidden mb-4 border border-white/5">
+                    <p id="uploadPlaceholder" class="text-gray-500 px-4 text-center">Select the .pdf, .docx, or .html file</p>
+                    <p id="fileNameDisplay" class="hidden text-blue-400 font-mono text-sm"></p>
+                </div>
+                <input type="file" id="stegoInput" accept="*/*" class="hidden" onchange="updateFileLabel()">
+                <button onclick="document.getElementById('stegoInput').click()" class="mt-auto w-full py-3 bg-blue-600/20 border border-blue-500/50 rounded-xl font-bold hover:bg-blue-600 transition">Select Document</button>
+            </div>
+
+            <div class="flex-1 glass-panel p-6 rounded-3xl flex flex-col border-2 border-dashed border-teal-500/30">
+                <h2 class="text-xl font-bold mb-4 text-teal-400">2. Extracted Result</h2>
+                <div class="w-full h-64 bg-gray-900/50 rounded-2xl flex items-center justify-center overflow-hidden mb-4 text-center">
+                    <div id="secretPlaceholder">
+                        <p id="extractionMsg" class="text-gray-500 px-4">The hidden secret will appear here</p>
+                    </div>
+                </div>
+                <button id="downloadBtn" class="hidden mt-auto w-full py-3 bg-teal-600/20 border border-teal-500/50 rounded-xl font-bold hover:bg-teal-700 transition">Download Extracted File</button>
+            </div>
+
+        </div>
+
+        <div class="max-w-2xl mx-auto glass-panel p-8 rounded-3xl">
+            <div class="mb-6">
+                <label class="block text-teal-300 text-sm font-bold mb-2">3. Security Verification</label>
+                <input type="password" id="stegoPass" 
+                       class="w-full bg-gray-800 border border-white/10 p-4 rounded-xl text-white focus:outline-none focus:border-teal-500 shadow-inner" 
+                       placeholder="Enter the security key">
+            </div>
+            
+            <button id="extractBtn" onclick="processExtraction()" class="w-full py-4 bg-gradient-to-r from-teal-600 to-blue-500 rounded-xl font-extrabold text-lg shadow-lg hover:scale-[1.02] active:scale-95 transition-all">
+                PERFORM DOCUMENT EXTRACTION
+            </button>
+            <p id="status" class="mt-4 text-center text-sm font-medium"></p>
+        </div>
+    </div>
+
+    <script src="../js/extractDocumentLogic.js">
+    </script>
+</body>
+</html>
