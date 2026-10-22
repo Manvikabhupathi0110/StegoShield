@@ -1,4 +1,19 @@
 
+## 🚀 Render Web Service Setup
+
+Deploy this repository on Render as a **Node Web Service** with:
+
+- **Build Command:** `yarn`
+- **Start Command:** `yarn start`
+- **Publish Directory:** _leave empty_ (not used for Web Services)
+
+The `start` script runs `server.js`, which serves:
+
+- `/` -> `html/index.html`
+- `/*.html` pages -> files in `html/` (for example `home.html`, `image.html`, `audio.html`, `video.html`, `document.html`, and extract pages)
+- `/css/*` -> files in `css/`
+- `/js/*` -> files in `js/`
+
 ## **🛡️ StegoShield: The Core Problem & Team Architecture**
 
 ### 1. The Critical Problem (Why We Built This)
